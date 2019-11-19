@@ -8,17 +8,21 @@
 
 team_name = '11' # Only 10 chars displayed.
 strategy_name = 'ughk'
-strategy_description = 'INSERT DESCRIP.'
+strategy_description = 'if ur latest play is c then I betray.'
 #
 def move(my_history, their_history, my_score, their_score):
-    my_history=0
+    
     if len(my_history)==0:
         return 'b'
         
-    if len(their_history)[-1]=='c':
-        return 'b'
+    if their_history[-1]=='b':
+        return 'c'
     else: 
         return 'c'
+     
+        
+        
+        
         ''' Arguments accepted: my_history, their_history are strings.
         my_score, their_score are ints.
         
