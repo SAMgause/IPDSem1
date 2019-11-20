@@ -6,23 +6,39 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = '11' # Only 10 chars displayed.
+team_name = 'RREEEEEEEEEEEE' # Only 10 chars displayed.
 strategy_name = 'ughk'
 strategy_description = 'if ur latest play is c then I betray.'
 #
 def move(my_history, their_history, my_score, their_score):
     
     if len(my_history)==0:
-        return 'b'
-        
-    if their_history[-1]=='b':
         return 'c'
+    
+    if 'b' > 'c' in their_history: 
+        return 'b'
+    if 'c'>'b' in their_history: 
+        return 'b'      
+#from 6
+    if 'b' in their_history:
+        return 'b'
     else: 
         return 'c'
-     
+#from 5
+    if 'b' in their_history or len(their_history)>100: 
+        return 'b'               
+    else:
+        return 'c'
+    
+    if their_history[-1]=='b':
+        return 'b'
+    
+       
+   
+    
+    
         
-        
-        
+                                    
         ''' Arguments accepted: my_history, their_history are strings.
         my_score, their_score are ints.
         
